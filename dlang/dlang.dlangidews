@@ -1,0 +1,9 @@
+{
+    "name": "dlang",
+    "description": null,
+    "projects": {
+        "cells": "cells/dub.json"
+    },
+    "includePath": {
+    }
+}

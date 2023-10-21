@@ -1,0 +1,6 @@
+{
+    "name": "cells",
+    "targetName": "cells",
+    "targetType": "executable",
+    "targetPath": "bin"
+}
