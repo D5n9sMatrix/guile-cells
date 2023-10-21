@@ -1,3 +1,38 @@
 {
-    "startupProject": "cells"
+    "startupProject": "cells",
+    "breakpoints": [
+    ],
+    "bookmarks": [
+    ],
+    "files": [
+    ],
+    "expandedItems": [
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/codes",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/notebooks",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/federal",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/free",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/play",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/run",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/dub.json",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/active",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/fixedplay",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/delagtes",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/log",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/fixed",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/loop",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/police",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/bull",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/create",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/delegates",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/types",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/packages",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/window",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/storage",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/arms",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/input",
+        "/home/admin/dlang-project/guile-cells/dlang/cells/source/continues/start"
+    ],
+    "selectedWorkspaceItem": "/home/admin/dlang-project/guile-cells/dlang/cells/source/app.d"
 }

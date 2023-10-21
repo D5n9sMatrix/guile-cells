@@ -1,202 +1,202 @@
 module continues.types.investigates;
 
-module fontconfig.fctypes;
+module fontconfig.Elementstypes;
 
 import std.string : toStringz, fromStringz, toLower;
 import std.algorithm : endsWith;
 
-alias FcChar8 = char;
-alias FcChar16 = wchar;
-alias FcChar32 = dchar;
-alias FcBool = int;
+alias ElementsChar8 = char;
+alias ElementsChar16 = wchar;
+alias ElementsChar32 = dchar;
+alias ElementsBool = int;
 
 enum : int {
-    FcFalse = 0,
-    FcTrue = 1
+    ElementsFalse = 0,
+    ElementsTrue = 1
 }
 
-struct FcMatrix {
+struct ElementsMatrix {
     double xx, xy, yx, yy;
 }
 
-struct FcCharSet {}
+struct ElementsCharSet {}
 
-struct FcLangSet {}
+struct ElementsLangSet {}
 
-struct FcConfig {}
-
-enum : int {
-    FcTypeUnknown = -1,
-    FcTypeVoid,
-    FcTypeInteger,
-    FcTypeDouble,
-    FcTypeString,
-    FcTypeBool,
-    FcTypeMatrix,
-    FcTypeCharSet,
-    FcTypeFTFace,
-    FcTypeLangSet,
-    FcTypeRange
-}
-
-alias FcType = int;
+struct ElementsConfig {}
 
 enum : int {
-    FcResultMatch,
-    FcResultNoMatch,
-    FcResultTypeMismatch,
-    FcResultNoId,
-    FcResultOutOfMemory
+    ElementsTypeUnknown = -1,
+    ElementsTypeVoid,
+    ElementsTypeInteger,
+    ElementsTypeDouble,
+    ElementsTypeString,
+    ElementsTypeBool,
+    ElementsTypeMatrix,
+    ElementsTypeCharSet,
+    ElementsTypeFTFace,
+    ElementsTypeLangSet,
+    ElementsTypeRange
 }
 
-alias FcResult = int;
+alias ElementsType = int;
 
-struct FcValue {
-    FcType    type;
+enum : int {
+    ElementsResultMatch,
+    ElementsResultNoMatch,
+    ElementsResultTypeMismatch,
+    ElementsResultNoId,
+    ElementsResultOutOfMemory
+}
+
+alias ElementsResult = int;
+
+struct ElementsValue {
+    ElementsType    type;
     union {
-        const FcChar8    *s;
+        const ElementsChar8    *s;
         int        i;
-        FcBool        b;
+        ElementsBool        b;
         double        d;
-        const FcMatrix    *m;
-        const FcCharSet    *c;
+        const ElementsMatrix    *m;
+        const ElementsCharSet    *c;
         void        *f;
-        const FcLangSet    *l;
-        const FcRange    *r;
+        const ElementsLangSet    *l;
+        const ElementsRange    *r;
     }
 }
 
-enum FcMatchKind {
-    FcMatchPattern,
-    FcMatchFont,
-    FcMatchScan
+enum ElementsMatchKind {
+    ElementsMatchPattern,
+    ElementsMatchFont,
+    ElementsMatchScan
 }
 
-enum FcLangResult {
-    FcLangEqual = 0,
-    FcLangDifferentCountry = 1,
-    FcLangDifferentTerritory = 1,
-    FcLangDifferentLang = 2
+enum ElementsLangResult {
+    ElementsLangEqual = 0,
+    ElementsLangDifferentCountry = 1,
+    ElementsLangDifferentTerritory = 1,
+    ElementsLangDifferentLang = 2
 }
 
-enum FcSetName {
-    FcSetSystem = 0,
-    FcSetApplication = 1
+enum ElementsSetName {
+    ElementsSetSystem = 0,
+    ElementsSetApplication = 1
 }
 
-enum FcEndian {
-    FcEndianBig,
-    FcEndianLittle
+enum ElementsEndian {
+    ElementsEndianBig,
+    ElementsEndianLittle
 }
 
-struct FcFontSet {
+struct ElementsFontSet {
     int        nfont;
     int        sfont;
-    FcPattern    **fonts;
+    ElementsPattern    **fonts;
 }
 
-struct FcObjectSet {
+struct ElementsObjectSet {
     int        nobject;
     int        sobject;
     const char    **objects;
 }
 
-struct FcPattern {}
+struct ElementsPattern {}
 
-struct FcRange {}
+struct ElementsRange {}
 
 enum {
-    FC_WEIGHT_THIN = 0,
-    FC_WEIGHT_EXTRALIGHT = 40,
-    FC_WEIGHT_ULTRALIGHT = FC_WEIGHT_EXTRALIGHT,
-    FC_WEIGHT_LIGHT = 50,
-    FC_WEIGHT_DEMILIGHT = 55,
-    FC_WEIGHT_SEMILIGHT = FC_WEIGHT_DEMILIGHT,
-    FC_WEIGHT_BOOK = 75,
-    FC_WEIGHT_REGULAR = 80,
-    FC_WEIGHT_NORMAL = FC_WEIGHT_REGULAR,
-    FC_WEIGHT_MEDIUM = 100,
-    FC_WEIGHT_DEMIBOLD = 180,
-    FC_WEIGHT_SEMIBOLD = FC_WEIGHT_DEMIBOLD,
-    FC_WEIGHT_BOLD = 200,
-    FC_WEIGHT_EXTRABOLD = 205,
-    FC_WEIGHT_ULTRABOLD = FC_WEIGHT_EXTRABOLD,
-    FC_WEIGHT_BLACK = 210,
-    FC_WEIGHT_HEAVY = FC_WEIGHT_BLACK,
-    FC_WEIGHT_EXTRABLACK = 215,
-    FC_WEIGHT_ULTRABLACK = FC_WEIGHT_EXTRABLACK
+    Elements_WEIGHT_THIN = 0,
+    Elements_WEIGHT_EXTRALIGHT = 40,
+    Elements_WEIGHT_ULTRALIGHT = Elements_WEIGHT_EXTRALIGHT,
+    Elements_WEIGHT_LIGHT = 50,
+    Elements_WEIGHT_DEMILIGHT = 55,
+    Elements_WEIGHT_SEMILIGHT = Elements_WEIGHT_DEMILIGHT,
+    Elements_WEIGHT_BOOK = 75,
+    Elements_WEIGHT_REGULAR = 80,
+    Elements_WEIGHT_NORMAL = Elements_WEIGHT_REGULAR,
+    Elements_WEIGHT_MEDIUM = 100,
+    Elements_WEIGHT_DEMIBOLD = 180,
+    Elements_WEIGHT_SEMIBOLD = Elements_WEIGHT_DEMIBOLD,
+    Elements_WEIGHT_BOLD = 200,
+    Elements_WEIGHT_EXTRABOLD = 205,
+    Elements_WEIGHT_ULTRABOLD = Elements_WEIGHT_EXTRABOLD,
+    Elements_WEIGHT_BLACK = 210,
+    Elements_WEIGHT_HEAVY = Elements_WEIGHT_BLACK,
+    Elements_WEIGHT_EXTRABLACK = 215,
+    Elements_WEIGHT_ULTRABLACK = Elements_WEIGHT_EXTRABLACK
 }
 
 enum {
-    FC_SLANT_ROMAN            =0,
-    FC_SLANT_ITALIC            =100,
-    FC_SLANT_OBLIQUE        =110
+    Elements_SLANT_ROMAN            =0,
+    Elements_SLANT_ITALIC            =100,
+    Elements_SLANT_OBLIQUE        =110
 }
 
 enum {
-    FC_WIDTH_ULTRACONDENSED        =50,
-    FC_WIDTH_EXTRACONDENSED        =63,
-    FC_WIDTH_CONDENSED        =75,
-    FC_WIDTH_SEMICONDENSED        =87,
-    FC_WIDTH_NORMAL            =100,
-    FC_WIDTH_SEMIEXPANDED        =113,
-    FC_WIDTH_EXPANDED        =125,
-    FC_WIDTH_EXTRAEXPANDED        =150,
-    FC_WIDTH_ULTRAEXPANDED        =200
+    Elements_WIDTH_ULTRACONDENSED        =50,
+    Elements_WIDTH_EXTRACONDENSED        =63,
+    Elements_WIDTH_CONDENSED        =75,
+    Elements_WIDTH_SEMICONDENSED        =87,
+    Elements_WIDTH_NORMAL            =100,
+    Elements_WIDTH_SEMIEXPANDED        =113,
+    Elements_WIDTH_EXPANDED        =125,
+    Elements_WIDTH_EXTRAEXPANDED        =150,
+    Elements_WIDTH_ULTRAEXPANDED        =200
 }
 
 enum {
-    FC_PROPORTIONAL        =0,
-    FC_DUAL                =90,
-    FC_MONO                =100,
-    FC_CHARCELL            =110
+    Elements_PROPORTIONAL        =0,
+    Elements_DUAL                =90,
+    Elements_MONO                =100,
+    Elements_CHARCELL            =110
 }
 
-const FC_FAMILY = "family";        /* String */
-const FC_STYLE = "style";        /* String */
-const FC_SLANT = "slant";        /* Int */
-const FC_WEIGHT = "weight";        /* Int */
-const FC_SIZE = "size";        /* Range (double) */
-const FC_ASPECT = "aspect";        /* Double */
-const FC_PIXEL_SIZE = "pixelsize";        /* Double */
-const FC_SPACING = "spacing";        /* Int */
-const FC_FOUNDRY = "foundry";        /* String */
-const FC_ANTIALIAS = "antialias";        /* Bool (depends) */
-const FC_HINTING = "hinting";        /* Bool (true) */
-const FC_HINT_STYLE = "hintstyle";        /* Int */
-const FC_VERTICAL_LAYOUT = "verticallayout";    /* Bool (false) */
-const FC_AUTOHINT = "autohint";        /* Bool (false) */
-const FC_GLOBAL_ADVANCE = "globaladvance";    /* Bool (true) */
-const FC_WIDTH = "width";        /* Int */
-const FC_FILE = "file";        /* String */
-const FC_INDEX = "index";        /* Int */
-const FC_FT_FACE = "ftface";        /* FT_Face */
-const FC_RASTERIZER = "rasterizer";    /* String (deprecated) */
-const FC_OUTLINE = "outline";        /* Bool */
-const FC_SCALABLE = "scalable";        /* Bool */
-const FC_COLOR = "color";        /* Bool */
-const FC_SCALE = "scale";        /* double */
-const FC_DPI = "dpi";        /* double */
-const FC_RGBA = "rgba";        /* Int */
-const FC_MINSPACE = "minspace";        /* Bool use minimum line spacing */
-const FC_SOURCE = "source";        /* String (deprecated) */
-const FC_CHARSET = "charset";        /* CharSet */
-const FC_LANG = "lang";        /* String RFC 3066 langs */
-const FC_FONTVERSION = "fontversion";    /* Int from 'head' table */
-const FC_FULLNAME = "fullname";    /* String */
-const FC_FAMILYLANG = "familylang";    /* String RFC 3066 langs */
-const FC_STYLELANG = "stylelang";        /* String RFC 3066 langs */
-const FC_FULLNAMELANG = "fullnamelang";    /* String RFC 3066 langs */
-const FC_CAPABILITY = "capability";    /* String */
-const FC_FONTFORMAT = "fontformat";    /* String */
-const FC_EMBOLDEN = "embolden";        /* Bool - true if emboldening needed*/
-const FC_EMBEDDED_BITMAP = "embeddedbitmap";    /* Bool - true to enable embedded bitmaps */
-const FC_DECORATIVE = "decorative";    /* Bool - true if style is a decorative variant */
-const FC_LCD_FILTER    = "lcdfilter";        /* Int */
-const FC_FONT_FEATURES = "fontfeatures";    /* String */
-const FC_NAMELANG = "namelang";        /* String RFC 3866 langs */
-const FC_PRGNAME = "prgname";        /* String */
-const FC_HASH = "hash";        /* String (deprecated) */
-const FC_POSTSCRIPT_NAME = "postscriptname";    /* String */
+const Elements_FAMILY = "family";        /* String */
+const Elements_STYLE = "style";        /* String */
+const Elements_SLANT = "slant";        /* Int */
+const Elements_WEIGHT = "weight";        /* Int */
+const Elements_SIZE = "size";        /* Range (double) */
+const Elements_ASPECT = "aspect";        /* Double */
+const Elements_PIXEL_SIZE = "pixelsize";        /* Double */
+const Elements_SPACING = "spacing";        /* Int */
+const Elements_FOUNDRY = "foundry";        /* String */
+const Elements_ANTIALIAS = "antialias";        /* Bool (depends) */
+const Elements_HINTING = "hinting";        /* Bool (true) */
+const Elements_HINT_STYLE = "hintstyle";        /* Int */
+const Elements_VERTICAL_LAYOUT = "verticallayout";    /* Bool (false) */
+const Elements_AUTOHINT = "autohint";        /* Bool (false) */
+const Elements_GLOBAL_ADVANCE = "globaladvance";    /* Bool (true) */
+const Elements_WIDTH = "width";        /* Int */
+const Elements_FILE = "file";        /* String */
+const Elements_INDEX = "index";        /* Int */
+const Elements_FT_FACE = "ftface";        /* FT_Face */
+const Elements_RASTERIZER = "rasterizer";    /* String (deprecated) */
+const Elements_OUTLINE = "outline";        /* Bool */
+const Elements_SCALABLE = "scalable";        /* Bool */
+const Elements_COLOR = "color";        /* Bool */
+const Elements_SCALE = "scale";        /* double */
+const Elements_DPI = "dpi";        /* double */
+const Elements_RGBA = "rgba";        /* Int */
+const Elements_MINSPACE = "minspace";        /* Bool use minimum line spacing */
+const Elements_SOURCE = "source";        /* String (deprecated) */
+const Elements_CHARSET = "charset";        /* CharSet */
+const Elements_LANG = "lang";        /* String RElements 3066 langs */
+const Elements_FONTVERSION = "fontversion";    /* Int from 'head' table */
+const Elements_FULLNAME = "fullname";    /* String */
+const Elements_FAMILYLANG = "familylang";    /* String RElements 3066 langs */
+const Elements_STYLELANG = "stylelang";        /* String RElements 3066 langs */
+const Elements_FULLNAMELANG = "fullnamelang";    /* String RElements 3066 langs */
+const Elements_CAPABILITY = "capability";    /* String */
+const Elements_FONTFORMAT = "fontformat";    /* String */
+const Elements_EMBOLDEN = "embolden";        /* Bool - true if emboldening needed*/
+const Elements_EMBEDDED_BITMAP = "embeddedbitmap";    /* Bool - true to enable embedded bitmaps */
+const Elements_DECORATIVE = "decorative";    /* Bool - true if style is a decorative variant */
+const Elements_LCD_FILTER    = "lcdfilter";        /* Int */
+const Elements_FONT_FEATURES = "fontfeatures";    /* String */
+const Elements_NAMELANG = "namelang";        /* String RElements 3866 langs */
+const Elements_PRGNAME = "prgname";        /* String */
+const Elements_HASH = "hash";        /* String (deprecated) */
+const Elements_POSTSCRIPT_NAME = "postscriptname";    /* String */
 
 

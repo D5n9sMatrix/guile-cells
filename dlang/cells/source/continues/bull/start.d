@@ -18,7 +18,6 @@ module continues.bull.start;
  */
 
 // this is translation of views_native_app_glue.c
-module views.views_native_app_glue_impl;
 
 version(ARM):
 extern(D):
